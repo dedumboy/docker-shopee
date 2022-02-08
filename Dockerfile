@@ -11,6 +11,6 @@ RUN pip install -U flask
 
 COPY . /app
 
-#ENTRYPOINT [ "python" ]
+EXPOSE 80
 
 CMD [ "python3", "-m" , "flask", "run", "--host=0.0.0.0"]
