@@ -1,10 +1,9 @@
-From flask import Flask
+from flask import Flask
+from flask import request
+
 app = Flask(__name__)
 
-@app.route('/')
-def hello_world:
-    return 'Hey, we have Flask in a Docker container!'
-
-
-if __name == '__main__':
-    app.run(debug=True, host='0.0.0.0')
+@app.route("/")
+def index():
+    ip_address = request.remote_addr
+    return "Requester IP: " + ip_address
